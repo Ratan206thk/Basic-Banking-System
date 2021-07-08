@@ -4,7 +4,7 @@ const path=require('path');
 
 const server=express();
 const router=require('./routes/router');
-const port=3000;
+const port=7000;
 
 server.set('view engine', 'ejs');
 server.set('views',path.join(__dirname,'./src'));
