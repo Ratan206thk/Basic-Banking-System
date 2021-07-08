@@ -15,6 +15,6 @@ console.log(__dirname)
 
 server.use('/',router());
 
-server.listen(port,()=>{
+server.listen(process.env.PORT || 5000,()=>{
     console.log('server has started');
 })
