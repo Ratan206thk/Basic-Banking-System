@@ -40,7 +40,7 @@ module.exports = () => {
       })
     }
   }
-  ab();
+  // ab();
 
   async function aa(x) {
     let db;
