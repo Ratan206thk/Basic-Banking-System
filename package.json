@@ -1,7 +1,7 @@
 {
   "name": "banking",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple banking between multiple customers",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server.js",
@@ -13,9 +13,17 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongodb": "^3.6.9"
+    "mongodb": "^3.6.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ratan206thk/Basic-Banking-System.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ratan206thk/Basic-Banking-System/issues"
+  },
+  "homepage": "https://github.com/Ratan206thk/Basic-Banking-System#readme"
 }
