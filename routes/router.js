@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/";
+const url = "mongodb+srv://user:<ripFasicHAqzBkEU>@sparks.jcwap.mongodb.net/user?retryWrites=true&w=majority";
 module.exports = () => {
   router.use(bodyParser.urlencoded());
   router.get('/', (request, response) => {
