@@ -1,3 +1,6 @@
+# run
+npm sun start
+
 # Basic-Banking-System
 Simple banking between multiple customers
 
@@ -11,5 +14,3 @@ npm install --save body-parser
 # setup change in package.json
 "script":{ start: "start": "nodemon ./server.js", ... ... }
 
-# run
-npm sun start
