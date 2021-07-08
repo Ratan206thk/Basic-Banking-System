@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/profile.css">
+    <link rel="stylesheet" href="/transfer.css">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1>
+        <%= object[cus].name %>
+    </h1>
+    <h3>Email: <%= object[cus].email %>
+    </h3>
+    <div id='flex'>
+        <div id='info' class="ins">
+            <img src="/Img2.jpg" alt="banking" width="30%">
+            <aside>Balance: Rs <span>
+                    <%= object[cus].balance %>
+                </span></aside>
+        </div>
+        <form action="/update" method="post" class="ins" onsubmit="return check()">
+            <label for="cust">TRANSFER TO:</label>
+            <select name="cust" id="select" required>
+                <option value="">Select Customer</option>
+                <% for(let i=0;i < object.length;i++){ if(i==cus)continue; %>
+                    <option value="<%= object[i].sn %>">
+                        <%= object[i].name %>(Balance Rs.<%= object[i].balance %>)
+                    </option>
+                    <% } %>
+            </select><br>
+            <label for="amount">AMOUNT:</label>
+            <input type="number" name="amount" id="amount" required>
+            <span></span>
+            <br>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function check() {
+            let value = '<%= object[cus].balance %>';
+            if (parseInt(document.getElementById('amount').value) > value) {
+                document.querySelector('form span').innerHTML = 'Insufficient Balance..!!!'
+                return false;
+            }
+            location.href='./action';
+            return true;
+        }
+    </script>
+</body>
+
+</html>

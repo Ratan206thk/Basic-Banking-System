@@ -1,0 +1,38 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif,Arial, Helvetica;
+    background-color: blueviolet;
+}
+header{
+    font-size: 4em;
+    text-align: center;
+    color: black;
+    margin: 2% auto;
+}
+div.table-responsive-md{
+    margin: auto 10%;
+}
+table{
+    font-size: larger;
+    text-align: center;
+    color: #070940;
+    cursor: pointer;
+}
+button{
+    display: flex;
+    width: auto;
+    border-radius: 5px;
+    border: solid 2px #616161;
+    height: 40px;
+    font-size: 150%;
+    color: #ffffff;
+    background: #140b66;
+    margin: 6% auto;
+    align-items: center;
+    cursor: pointer;
+  }
+  .table-bordered thead tr th,.table-bordered tbody tr td,.table-bordered tbody tr th{
+      border-width: 1px;
+      cursor: pointer;
+  }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="customers.css">
+    <title>Customers</title>
+</head>
+
+<body>
+    <header>CUSTOMERS</header>
+    <div class="table-responsive-md">
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">SN</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">BALANCE</th>
+                    <th scope="col">SELECT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i< result.length; i++){ %>
+                    <tr>
+                        <th scope="row">
+                            <%= result[i].sn %>
+                        </th>
+                        <td>
+                            <%= result[i].name %>
+                        </td>
+                        <td>
+                            <%= result[i].email %>
+                        </td>
+                        <td>
+                            <%= result[i].balance %>
+                        </td>
+                        <td><input type="radio" name="sel"></td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+        <button id="btn">View Customer</button>
+    </div>
+    <script>
+        const row=document.querySelectorAll('tr');
+        const radio = document.querySelectorAll('input[name="sel"]');
+        for(let j=0;j<row.length;j++){
+            row[j].addEventListener('click',()=>{
+                radio[j-1].checked=true;
+            })
+        }
+        document.getElementById('btn').addEventListener('click', () => {
+            let ran;
+            for (const opt of radio) {
+                if (opt.checked) {
+                    ran=opt.parentElement.parentElement.childNodes[1].innerText;
+                    location.href='./profile/'+ran;
+                    break;
+                }
+            }
+            if(!ran)
+            alert('Please select customer before viewing..!!!')
+        })
+    </script>
+</body>
+
+</html>

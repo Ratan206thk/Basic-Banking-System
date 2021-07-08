@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/profile.css">
+    <title>Profile</title>
+</head>
+
+<body>
+    <h1><%= object.name %></h1>
+    <h3>Email: <%= object.email %></h3>
+    <div id="img">
+        <img src="/Img2.jpg" alt="banking" width="30%">
+    </div>
+    <div id='info'>
+        <aside>Balance: Rs <span id="<%= object.sn%>"><%= object.balance %></span></aside>
+    </div>
+    <button onclick="check()" id='btn'>TRANSFER</button>
+    <script>
+        let x=document.querySelector('span');
+        function check(){
+            if(parseInt(x.innerText)>0)
+            location.href='../transfer/'+x.id;
+            else alert('Insufficient Balance..!!!');
+        };
+    </script>
+</body>
+
+</html>
