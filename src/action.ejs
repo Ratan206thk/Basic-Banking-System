@@ -6,20 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Action</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <%- include('./shared/header.ejs') %>
+    <aside>
+        The transfer is sucessfull. <br> THANKS..!!!
+    </aside>
+    <div id='hehe'>
+        <button onclick="window.location.href='./'">Home</button>
+        <button onclick="window.location.href='./customers'">Customers</button>
+        <button onclick="window.location.href='./history'">Transactions</button>
+    </div>
     <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            font-family: sans-serif, Arial, Helvetica;
-            background-color: blueviolet;
-        }
-
-        center {
+        aside {
             margin: 5%;
             font-size: 3em;
+            text-align: center;
         }
 
         button {
@@ -35,20 +40,13 @@
             align-items: center;
             cursor: pointer;
         }
-        div{
+        div#hehe{
             display: flex;
             width: auto;
-            margin: auto 30%;
+            margin: 8%;
             justify-content: space-between;
         }
     </style>
-    <center>
-        The transfer is Sucessfull.
-    </center>
-    <div>
-        <button onclick="window.location.href='./'">Home</button>
-        <button onclick="window.location.href='./customers'">Customers</button>
-    </div>
+<%- include('./shared/footer.ejs') %>
 </body>
-
 </html>

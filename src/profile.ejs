@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/profile.css">
     <title>Profile</title>
 </head>
 
 <body>
+    <%- include('./shared/header.ejs') %>
     <h1><%= object.name %></h1>
     <h3>Email: <%= object.email %></h3>
     <div id="img">
-        <img src="/img2.jpg" alt="banking" width="30%">
+        <img src="../images/img2.png" alt="banking" width="30%">
     </div>
     <div id='info'>
         <aside>Balance: Rs <span id="<%= object.sn%>"><%= object.balance %></span></aside>
     </div>
     <button onclick="check()" id='btn'>TRANSFER</button>
     <script>
-        let x=document.querySelector('span');
+        let x=document.querySelectorAll('span');
         function check(){
-            if(parseInt(x.innerText)>0)
-            location.href='../transfer/'+x.id;
+            if(parseInt(x[1].innerText)>0)
+            location.href='../transfer/'+x[1].id;
             else alert('Insufficient Balance..!!!');
         };
     </script>
+    <%- include('./shared/footer.ejs') %>
 </body>
 
 </html>
