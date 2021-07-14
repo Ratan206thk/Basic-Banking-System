@@ -19,8 +19,8 @@ module.exports = () => {
   });
   router.post('/create', async (request, response) => {
     await aa(request.body);
+    ab();
     response.render('insert', { pagetitle: 'new Title' });
-    console.log('hehehe');
   })
   router.post('/update', async (request, response) => {
     let arr = ((request.headers.referer).split('/'));
